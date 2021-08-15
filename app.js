@@ -40,10 +40,10 @@ function culcTime() {
     const secs = Math.floor((delta % (1000 * 60)) / 1000);
 
     console.log(`days: ${days}, hours: ${hours}, mins: ${mins}, secs: ${secs}`);
-    refs.days.textContent = days;
-    refs.hours.textContent = hours;
-    refs.mins.textContent = mins;
-    refs.secs.textContent = secs;
+    refs.days.textContent = days < 10 ? `0${days}` : days; // добавляем впереди нолик, если число меньше 10
+    refs.hours.textContent = hours < 10 ? `0${hours}` : hours; // добавляем впереди нолик, если число меньше 10
+    refs.mins.textContent = mins < 10 ? `0${mins}` : mins; // добавляем впереди нолик, если число меньше 10
+    refs.secs.textContent = secs < 10 ? `0${secs}` : secs; // добавляем впереди нолик, если число меньше 10
 }
 
 // Это функция-обвёртка, которая передаётся в обработчик и запускается по событию, например клику кнопки.
